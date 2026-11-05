@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10162f">
+  <meta name="description" content="Star Catcher, game arcade sederhana untuk menangkap bintang dan menghindari meteor.">
+  <title>Star Catcher</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="page-shell">
+    <header class="page-header">
+      <div class="brand-mark" aria-hidden="true">✦</div>
+      <div>
+        <p class="eyebrow">MINI ARCADE GAME</p>
+        <h1>Star Catcher</h1>
+      </div>
+      <p class="header-note">Tangkap bintang. Hindari meteor.</p>
+    </header>
+
+    <section class="game-card" aria-label="Permainan Star Catcher">
+      <div class="hud" aria-live="polite">
+        <div class="hud-item"><span class="hud-label">SKOR</span><strong id="score">0</strong></div>
+        <div class="hud-item"><span class="hud-label">WAKTU</span><strong><span id="time">60</span><small> dtk</small></strong></div>
+        <div class="hud-item"><span class="hud-label">NYAWA</span><strong id="lives">♥ ♥ ♥</strong></div>
+      </div>
+
+      <div class="canvas-wrap">
+        <canvas id="game" width="800" height="560" aria-label="Area permainan. Gerakkan pesawat ke kiri dan kanan untuk menangkap bintang dan menghindari meteor."></canvas>
+        <div class="overlay" id="overlay">
+          <div class="overlay-panel">
+            <div class="overlay-icon" id="overlayIcon">✦</div>
+            <p class="eyebrow" id="overlayEyebrow">SIAP BERMAIN?</p>
+            <h2 id="overlayTitle">Tangkap Bintangnya!</h2>
+            <p id="overlayText">Kumpulkan bintang sebanyak mungkin selama 60 detik. Hindari meteor agar nyawamu tidak habis.</p>
+            <button id="startButton" class="primary-button" type="button">Mulai Permainan</button>
+            <p class="key-hint">Gerak: <kbd>←</kbd> <kbd>→</kbd> atau <kbd>A</kbd> <kbd>D</kbd></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mobile-controls" aria-label="Kontrol sentuh">
+        <button class="control-button" id="leftButton" type="button" aria-label="Gerak ke kiri">◀</button>
+        <span>GERAKKAN PEMAIN</span>
+        <button class="control-button" id="rightButton" type="button" aria-label="Gerak ke kanan">▶</button>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      <span>★ +10 poin</span>
+      <span>☄ Meteor mengurangi 1 nyawa</span>
+      <span>60 detik · 3 nyawa</span>
+    </footer>
+  </main>
+  <script src="./game.js" defer></script>
+</body>
+</html>
